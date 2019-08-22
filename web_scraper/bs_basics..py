@@ -4,7 +4,7 @@ html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" class = "special">
     <title>First HTML Page</title>
 </head>
 <body>
@@ -24,5 +24,11 @@ html = """
 
 soup = BeautifulSoup(html, "html.parser")
 # print(soup.find_all(class_="special"))
-d = soup.find_all(attrs={"data-example": "yes"})
-print(d)
+# d = soup.select("#first")
+# el = soup.select(".special")[0]
+# for el in soup.select(".special"):
+#     print(el.name)
+#     print(el.attrs)
+
+attr = soup.find("div")["id"]
+print(attr)
