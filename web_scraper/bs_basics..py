@@ -14,7 +14,7 @@ html = """
     </div>
     <ol>
         <li class="special">This list item is special.</li>
-        <li class="special">This list item is also special.</li>
+        <li class="super_special">This list item is also special.</li>
         <li>This list item is not special.</li>
     </ol>
     <div>bye</div>
@@ -30,5 +30,9 @@ soup = BeautifulSoup(html, "html.parser")
 #     print(el.name)
 #     print(el.attrs)
 
-attr = soup.find("div")["id"]
-print(attr)
+# attr = soup.find("div")["id"]
+# print(attr)
+
+# data = soup.body.contents[1].next_sibling.next_sibling
+data = soup.select("[data-example]")[1]
+print(data)
